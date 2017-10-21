@@ -12,6 +12,7 @@ ROOT=$(cd $(dirname $0) && pwd)
 
 ### Python ###
 cd $ROOT/python/src
+pip install jpholiday
 python -m compileall
 
 ### C++ ###

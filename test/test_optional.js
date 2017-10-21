@@ -50,6 +50,28 @@ describe('Creative Engineer Exam #1 (Optional Tests)', () => {
 	it('Case #15 should be caluculated', () => co(function*() {
 		const input = [
 			'2017/02',
+			'2017/02/01 09:00-12:00 13:00-15:00'
+		];
+		const expected = [
+			'0', '0', '0', '0', '0'
+		];
+		const actual = yield run('./run.sh', [], input.join('\n'));
+		expect(actual).toEqual(expected);
+	}));
+	it('Case #16 should be caluculated', () => co(function*() {
+		const input = [
+			'2017/02',
+			'2017/02/01 09:00-12:00 13:00-18:00'
+		];
+		const expected = [
+			'1', '0', '0', '0', '0'
+		];
+		const actual = yield run('./run.sh', [], input.join('\n'));
+		expect(actual).toEqual(expected);
+	}));
+	it('Case #17 should be caluculated', () => co(function*() {
+		const input = [
+			'2017/02',
 			'2017/02/12 08:00-12:00 13:00-26:00'
 		];
 		const expected = [
@@ -58,7 +80,29 @@ describe('Creative Engineer Exam #1 (Optional Tests)', () => {
 		const actual = yield run('./run.sh', [], input.join('\n'));
 		expect(actual).toEqual(expected);
 	}));
-	it('Case #16 should be caluculated', () => co(function*() {
+	it('Case #18 should be caluculated', () => co(function*() {
+		const input = [
+			'2017/02',
+			'2017/02/04 08:00-12:00 13:00-18:00'
+		];
+		const expected = [
+			'0', '0', '0', '9', '0'
+		];
+		const actual = yield run('./run.sh', [], input.join('\n'));
+		expect(actual).toEqual(expected);
+	}));
+	it('Case #19 should be caluculated', () => co(function*() {
+		const input = [
+			'2017/02',
+			'2017/02/05 08:00-12:00 13:00-18:00'
+		];
+		const expected = [
+			'0', '0', '0', '0', '9'
+		];
+		const actual = yield run('./run.sh', [], input.join('\n'));
+		expect(actual).toEqual(expected);
+	}));
+	it('Case #20 should be caluculated', () => co(function*() {
 		const input1 = [
 			'2017/01',
 			'2017/01/16 08:00-12:00 13:00-18:00',
@@ -125,5 +169,27 @@ describe('Creative Engineer Exam #1 (Optional Tests)', () => {
 		];
 		const actual4 = yield run('./run.sh', [], input4.join('\n'));
 		expect(actual4).toEqual(expected4);
+	}));
+	it('Case #21 should be caluculated', () => co(function*() {
+		const input = [
+			'2017/01',
+			'2017/01/09 08:00-12:00 13:00-18:00'
+		];
+		const expected = [
+			'0', '0', '0', '0', '9'
+		];
+		const actual = yield run('./run.sh', [], input.join('\n'));
+		expect(actual).toEqual(expected);
+	}));
+	it('Case #21 should be caluculated', () => co(function*() {
+		const input = [
+			'2017/01',
+			'2017/01/09 08:00-12:00 13:00-26:00'
+		];
+		const expected = [
+			'0', '2', '4', '0', '15'
+		];
+		const actual = yield run('./run.sh', [], input.join('\n'));
+		expect(actual).toEqual(expected);
 	}));
 });
